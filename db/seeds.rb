@@ -1,7 +1,7 @@
 User.destroy_all
-u1 = User.create :name => 'Ash'
-u2 = User.create :name => 'Misty'
-u3 = User.create :name => 'Brock'
+u1 = User.create :name => 'Ash', :password => 'chicken', :admin => true
+u2 = User.create :name => 'Misty', :password => 'chicken'
+u3 = User.create :name => 'Brock', :password => 'chicken'
 puts "#{ User.count } users."
 
 

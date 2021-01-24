@@ -1,0 +1,7 @@
+<h1>New Bag</h1>
+
+<%= form_for @bag do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :placeholder => 'Water type pokemon bag' %>
+  <%= f.submit %>
+<% end %>
