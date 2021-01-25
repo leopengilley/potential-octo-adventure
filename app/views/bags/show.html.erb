@@ -1,0 +1,5 @@
+<h1><%= @bag.title %></h1>
+
+<% @bag.pokemons.each do |pokemon| %>
+  <%= pokemon.name %>
+<% end %>

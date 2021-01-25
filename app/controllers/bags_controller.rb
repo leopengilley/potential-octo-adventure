@@ -1,14 +1,23 @@
 class BagsController < ApplicationController
   before_action :check_for_login
 
+  def index
+    @bags = @current_user.bags.all
+  end
+
   def new
     @bag = Bag.new
+    @pokemons = Pokemon.all
   end
 
   def create
     bag = Bag.create bag_params
     @current_user.bags << bag
     redirect_to root_path
+  end
+
+  def show
+    @bag = Bag.find params[:id]
   end
 
   private

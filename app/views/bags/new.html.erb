@@ -3,5 +3,14 @@
 <%= form_for @bag do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, :placeholder => 'Water type pokemon bag' %>
+
+  <%= f.label :pokemons %>
+  <%= f.select :pokemons, Pokemon.pluck(:name, :id) %>
+
   <%= f.submit %>
+<% end %>
+
+
+<% @pokemons.each do |pokemon| %>
+  <%= pokemon.name %>
 <% end %>
