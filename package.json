@@ -2,7 +2,4 @@
   "name": "potential-octo-adventure",
   "private": true,
   "dependencies": {},
-  "scripts": {
-     "start": "node index.js"
-  }
 }
