@@ -4,20 +4,25 @@ class PokemonsController < ApplicationController
     @api_list = PokeApi.get(pokemon: {limit: 1200, offset: 0})
   end
 
+  def show
+    @pokemon = Pokemon.find(params[:id])
+  end
+
   def new
     @pokemon = Pokemon.new
   end
 
   def create
-    pokemon = Pokemon.create pokemon_params
-    if @pokemon.save
-      redirect_to pokemons_path
+    pokemon = Pokemon.new(pokemon_params)
+    if params[:front, :back].present?
+      req = Cloudinary::Uploader.upload(params[:front, :back])
+      pokemon.image = req["public_id"]
+      pokemon.save
+    end
+    redirect_to pokemons_index_path
     else
       render :new
     end
-  end
-
-  def show
   end
 
   private

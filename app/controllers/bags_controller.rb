@@ -22,6 +22,6 @@ class BagsController < ApplicationController
 
   private
   def bag_params
-    params.require(:bag).permit(:title, :pokemon_ids)
+    params.require(:bag).permit(:title, :pokemon_ids => [])
   end
 end
