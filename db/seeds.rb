@@ -25,18 +25,18 @@ p10 = Pokemon.create :name => 'blastoise'
 puts "#{ Pokemon.count } pokemons."
 
 Attack.destroy_all
-a1 = Attack.create :name => 'static'
-a2 = Attack.create :name => 'blaze'
-a3 = Attack.create :name => 'chlorophyll'
-a4 = Attack.create :name => 'torrent'
-a5 = Attack.create :name => 'solar-power'
-a6 = Attack.create :name => 'overgrow'
-a7 = Attack.create :name => 'rain-dish'
-a8 = Attack.create :name => 'growl'
-a9 = Attack.create :name => 'petal-blizzard'
-a10 = Attack.create :name => 'bubble-beam'
-a11 = Attack.create :name => 'hydro-pump'
-a12 = Attack.create :name => 'flamethrower'
+a1 = Attack.create :name => 'static', :damage => 5
+a2 = Attack.create :name => 'blaze', :damage => 5
+a3 = Attack.create :name => 'chlorophyll', :damage => 5
+a4 = Attack.create :name => 'torrent', :damage => 5
+a5 = Attack.create :name => 'solar-power', :damage => 5
+a6 = Attack.create :name => 'overgrow', :damage => 5
+a7 = Attack.create :name => 'rain-dish', :damage => 5
+a8 = Attack.create :name => 'growl', :damage => 5
+a9 = Attack.create :name => 'petal-blizzard', :damage => 5
+a10 = Attack.create :name => 'bubble-beam', :damage => 5
+a11 = Attack.create :name => 'hydro-pump', :damage => 5
+a12 = Attack.create :name => 'flamethrower', :damage => 5
 puts "#{ Attack.count } attacks."
 
 #Associations

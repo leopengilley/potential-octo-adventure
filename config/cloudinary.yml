@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dvc03n4ib
+  api_key: '977631489627991'
+  api_secret: DmGPlffumgcdh_6x2qyED1O8I2M
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dvc03n4ib
+  api_key: '977631489627991'
+  api_secret: DmGPlffumgcdh_6x2qyED1O8I2M
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dvc03n4ib
+  api_key: '977631489627991'
+  api_secret: DmGPlffumgcdh_6x2qyED1O8I2M
+  enhance_image_tag: true
+  static_file_support: false
