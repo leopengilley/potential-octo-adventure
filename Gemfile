@@ -30,6 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 #Pokemon API
 gem 'poke-api-v2'
 
+#JQuery
+gem 'jquery-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

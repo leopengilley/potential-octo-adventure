@@ -1,0 +1,7 @@
+<h1>All Pokemons</h1>
+
+<% @api_list.results.each do |n| %>
+<!-- exists? -->
+  <%= n.name %>
+  <%= image_tag "/files.pokefans.net/sprites/xy/animationen/#{ n.name }.gif" %>
+<% end %>

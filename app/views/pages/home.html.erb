@@ -4,5 +4,83 @@
   <p>
     Welcome back <%= @current_user.name %>
   </p>
-  
+
+  <div class="container">
+
+    <div class="cpuPokemon">
+        <img class="fixRandomGifPosition" src="/files.pokefans.net/sprites/xy/animationen/<%= @rand_pokemon.name %>.gif" alt="refresh">
+    </div>
+
+    <div class="userPokemon">
+      <img id="p1" src="/files.pokefans.net/sprites/xy/animationen/back/charizard.gif" />
+    </div>
+
+    <div class="controls">
+      <tbody>
+        <table>
+          <tr>
+            <td class="attackButton"> Attack</td>
+          </tr>
+        </table>
+      </tbody>
+    </div>
+
+  </div>
 <% end %>
+
+
+<script>
+  $( document ).ready(function() {
+    let turnCount = 1;
+    const user = "<%= @current_user.name %>";
+    let userBag = "<%= @current_user.bags.first %>";
+
+    let charizard = {
+      name: "charizard",
+      health: 100,
+      attack: 25
+    };
+
+    let pikachu = {
+      name: "pikachu",
+      health: 50,
+      attack: 5
+    };
+
+    let squirtle = {
+      name: "squirtle",
+      health: 50,
+      attack: 5
+    };
+
+    let currentCpu = "<%= @rand_pokemon.name %>";
+
+    let currentPokemon = charizard;
+
+
+
+
+    if (turnCount % 2 == 0) {
+      $('.attackButton').on('click', function (event){
+        currentCpu['health'] -= currentPokemon['attack'];
+        if (currentCpu['health'] <= 0) {
+          console.log( currentCpu['name'] + " fainted.");
+          $('#cpu1').prop( "src", "/files.pokefans.net/sprites/xy/animationen/squirtle.gif")//next pokemon in bag
+          currentCpu = squirtle;
+          console.log( currentCpu['name'] + " is up next.");
+        };
+        turnCount = turnCount + 1;
+      });
+    } else {
+      console.log("It's CPU's turn.");
+      currentPokemon['health'] -= currentCpu['attack'];
+      console.log("CPU used " + cpuMove "and delt " + cpuDamage );
+      turnCount = turnCount + 1;
+    }
+
+
+
+
+
+  });
+</script>

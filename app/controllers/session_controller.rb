@@ -10,8 +10,9 @@ class SessionController < ApplicationController
     else
       flash[:error] = "Invalid username"
       redirect_to login_path
+    end
   end
-end
+
 
   def destroy
       session[:user_id] = nil

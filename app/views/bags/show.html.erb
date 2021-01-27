@@ -2,4 +2,7 @@
 
 <% @bag.pokemons.each do |pokemon| %>
   <%= pokemon.name %>
+  <%= image_tag "/files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif" %>
+  Attacks: <%= pokemon.attacks.first.name %>
+  <br>
 <% end %>

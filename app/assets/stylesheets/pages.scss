@@ -1,3 +1,40 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  position: relative;
+  width: 556px;
+  height: 371px;
+  background-image: url("/battle_background.png");
+}
+
+.cpuPokemon {
+  position: absolute;
+  right: 45px;
+  top: -10px;
+  height: 192px;
+  width: 192px;
+}
+
+.fixRandomGifPosition {
+  position:absolute;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.userPokemon {
+  position: absolute;
+  left: 20px;
+  top: 90px;
+  height: 192px;
+  width: 192px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: white;
+  height: 40px;
+  width: 100px;
+}

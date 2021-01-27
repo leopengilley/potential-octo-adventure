@@ -1,5 +1,5 @@
 <h1>Here are all your bags <%= @current_user.name %></h1>
 
 <% @bags.each do |bag| %>
-  <%= link_to "Hard coded bag", bag %>
+  <%= link_to bag.title, bag %>
 <% end %>

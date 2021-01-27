@@ -11,6 +11,7 @@ class BagsController < ApplicationController
   end
 
   def create
+    bag.pokemon_ids << params[:pokemon_ids]
     bag = Bag.create bag_params
     @current_user.bags << bag
     redirect_to root_path
@@ -22,6 +23,6 @@ class BagsController < ApplicationController
 
   private
   def bag_params
-    params.require(:bag).permit(:title)
+    params.require(:bag).permit(:title, :pokemon_ids)
   end
 end
