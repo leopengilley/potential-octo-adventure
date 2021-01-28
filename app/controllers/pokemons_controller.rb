@@ -24,8 +24,11 @@ class PokemonsController < ApplicationController
 
   def create
     @pokemon = Pokemon.new pokemon_params
-    @pokemon.save
-    redirect_to pokemons_path
+    if @available_pokemon.include? @pokemon[:name]
+      @pokemon.save
+      redirect_to pokemons_path
+    else render :new
+    end
   end
 
   private

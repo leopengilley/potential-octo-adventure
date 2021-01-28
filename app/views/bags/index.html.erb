@@ -1,5 +1,12 @@
-<h1>Here are all your bags <%= @current_user.name %></h1>
+<h1>Here are all your inventories, <%= @current_user.name %></h1>
 
 <% @bags.each do |bag| %>
   <%= link_to bag.title, bag %>
 <% end %>
+
+
+
+<br>
+<br>
+<br>
+<%= link_to "New Inventory", new_bag_path %>

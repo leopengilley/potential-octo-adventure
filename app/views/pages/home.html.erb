@@ -1,7 +1,12 @@
 <h1>Home</h1>
 
 <% if @current_user.present? %>
+  <h2>
+    Welcome to the Pokémon Database, <%= @current_user.name %>.
+  </h2>
+  <br>
   <p>
-    Welcome <%= @current_user.name %>
+    Here you can help add Pokémon to the database,
+    and store some in an inventory for battles (coming soon).
   </p>
 <% end %>
