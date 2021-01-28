@@ -91,3 +91,22 @@ td {
 .fight:hover {
   color: grey;
 }
+
+.index {
+  position: relative;
+  display: inline-block;
+  border: 2px solid grey;
+  height: 192px;
+  width: 192px;
+  overflow: hidden;
+}
+
+.index:hover {
+  background-color: grey;
+}
+
+.indexed {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

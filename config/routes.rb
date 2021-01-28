@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
-  resources :users, :only => [:new, :create, :index, :show] #what does this do
+  resources :users, :only => [:new, :create, :index, :show]
 
   resources :bags
 

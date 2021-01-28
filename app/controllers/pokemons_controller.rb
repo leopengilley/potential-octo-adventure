@@ -6,7 +6,16 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    @pokemon = Pokemon.find(params[:id]) #maybe include a show page of each pokemon
+    @pokemon = Pokemon.find(params[:id])
+    url = "https://pokeapi.co/api/v2/pokemon/#{ @pokemon.name }/"
+    @info = HTTParty.get url;
+    @height = @info["height"]
+    @weight = @info["weight"]
+    @character_url = @info["species"]["url"]
+    url2 = @character_url
+    @info2 = HTTParty.get url2;
+    @blurb = @info2["flavor_text_entries"][0]["flavor_text"]
+
   end
 
   def new

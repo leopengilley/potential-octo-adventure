@@ -1,9 +1,7 @@
 <h1><%= @bag.title %></h1>
 
 <% @bag.pokemons.each do |pokemon| %>
-  <%= pokemon.name %>
-  <%= image_tag "https://files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif" %>
-  Attacks: <%= pokemon.attacks.first.name %>
+  <%= link_to image_tag("https://files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif"), pokemon %>
   <br>
 <% end %>
 

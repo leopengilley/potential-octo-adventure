@@ -33,6 +33,9 @@ gem 'poke-api-v2'
 #JQuery
 gem 'jquery-rails'
 
+#HTTParty
+gem 'httparty'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

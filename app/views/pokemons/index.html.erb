@@ -1,6 +1,7 @@
 <h1>All Pokemons</h1>
 
-<% @pokemons.each do |pokemon| %>
-  <p><%= pokemon.name %></p>
-  <%= image_tag "https://files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif" %>
-<% end %>
+  <% @pokemons.each do |pokemon| %>
+    <div class="index">
+        <%= link_to image_tag("https://files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif", :class => "indexed"), pokemon %>
+    </div>
+  <% end %>
