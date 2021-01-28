@@ -2,7 +2,12 @@
 
 <% @bag.pokemons.each do |pokemon| %>
   <%= pokemon.name %>
-  <%= image_tag "/files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif" %>
+  <%= image_tag "https://files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif" %>
   Attacks: <%= pokemon.attacks.first.name %>
   <br>
 <% end %>
+
+<div class="bagControls">
+  <%= link_to 'Edit Bag', edit_bag_path(@bag) %>
+  <%= button_to 'Delete Bag', @bag, :method => 'delete' %>
+</div>

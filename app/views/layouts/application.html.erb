@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/assets/session.css">
   </head>
 
   <body>
@@ -17,7 +18,9 @@
           <%= link_to 'Users', users_path %>
         <% end %>
         <%= link_to "All Bags", bags_path %>
-        <%= link_to "New bag", new_bag_path %>
+        <%= link_to "New Bag", new_bag_path %>
+        <%= link_to "Pokedex", pokemons_path %>
+        <%= link_to "Add Pokemon", new_pokemon_path %>
         <%= link_to "Log out #{ @current_user.name }", login_path, :method => 'delete' %>
       <% else %>
         <%= link_to 'Sign up', new_user_path %>

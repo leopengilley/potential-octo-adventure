@@ -10,26 +10,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create user_params
-    #checking for existing username (maybe the message can be instant?)
-    if name.includes? params[:user][:name]
-      return
-    end
-
+    @user = User.new user_params
     if @user.save
-      redirect_to root_path
+      session[:user_id] = @user.id
+      redirect_to bags_path
     else
       render :new
     end
-  end
-
-  def show
-    @current_user
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
-
 end

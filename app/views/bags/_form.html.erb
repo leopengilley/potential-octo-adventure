@@ -1,0 +1,12 @@
+<%= form_for @bag do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :placeholder => 'Water type pokemon bag' %>
+  <br>
+  <br>
+  <% Pokemon.all.each do |pokemon| %>
+    <%= check_box_tag "bag[pokemon_ids][]", pokemon.id, @bag.pokemon_ids.include?(pokemon.id) %>
+    <%= pokemon.name %><br/>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>

@@ -1,8 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pokemon {
+  text-align: center;
+}
+
+.logo {
+  width: 50%;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
 .container {
   position: relative;
   width: 556px;
   height: 371px;
   background-image: url("/battle_background.png");
+  margin: 0 auto;
 }
 
 .cpuPokemon {
@@ -30,11 +53,41 @@
   width: 192px;
 }
 
+#p1 {
+  position:absolute;
+  margin:auto;
+  top:85px;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
 .controls {
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: 40px;
+  right: 180px;
+  background-color: transparent;
+  height: 55px;
+  width: 350px;
+  color: black;
+  text-align: left;
+}
+
+.battle {
+  position: absolute;
   background-color: white;
-  height: 40px;
-  width: 100px;
+  bottom: 3px;
+  right: 3px;
+  border: 2px solid darkblue;
+  text-align: center;
+  height: 100px;
+  color: black;
+}
+
+td {
+  padding: 12px;
+}
+
+.fight:hover {
+  color: grey;
 }

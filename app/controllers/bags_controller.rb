@@ -16,8 +16,24 @@ class BagsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @bag = Bag.find params[:id]
+  end
+
+  def update
+    bag = Bag.find params[:id]
+    bag.update bag_params
+    redirect_to bag
+  end
+
   def show
     @bag = Bag.find params[:id]
+  end
+
+  def destroy
+    bag = Bag.find params[:id]
+    bag.destroy
+    redirect_to bags_path
   end
 
   private

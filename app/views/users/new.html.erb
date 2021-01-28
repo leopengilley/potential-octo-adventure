@@ -4,10 +4,11 @@
   <ol>
     <% @user.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
+    <% end %>
   </ol>
 <% end %>
 
-<%= form_tag @user do |f| %>
+<%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -17,5 +18,5 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <%= submit "Sign up!" %>
+  <%= f.submit "Sign up!" %>
 <% end %>

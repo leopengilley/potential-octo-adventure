@@ -14,4 +14,13 @@ class ApplicationController < ActionController::Base
   def check_for_admin
     redirect_to root_path unless @current_user.present? && @current_user.admin
   end
+
+  def get_pokemon
+    @api_list = PokeApi.get(pokemon: {limit: 1200, offset: 0})
+    @available_pokemon = []
+    @api_list.results.each do |n|
+      @available_pokemon << n.name
+    end
+  end
+
 end
