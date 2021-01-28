@@ -5,19 +5,6 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
   end
 
-  def show
-    @pokemon = Pokemon.find(params[:id])
-    url = "https://pokeapi.co/api/v2/pokemon/#{ @pokemon.name }/"
-    @info = HTTParty.get url;
-    @height = @info["height"]
-    @weight = @info["weight"]
-    @character_url = @info["species"]["url"]
-    url2 = @character_url
-    @info2 = HTTParty.get url2;
-    @blurb = @info2["flavor_text_entries"][0]["flavor_text"]
-
-  end
-
   def new
     @pokemon = Pokemon.new
   end
@@ -31,8 +18,30 @@ class PokemonsController < ApplicationController
     end
   end
 
+  def edit
+    @pokemon = Pokemon.find params[:id]
+    @attacks = @pokemon.attacks.all
+  end
+
+  def update
+    pokemon = Pokemon.find params[:id]
+    pokemon.update pokemon_params
+    redirect_to bags_path
+  end
+
+  def show
+    @pokemon = Pokemon.find(params[:id])
+    url = "https://pokeapi.co/api/v2/pokemon/#{ @pokemon.name }/"
+    @info = HTTParty.get url;
+    @character_url = @info["species"]["url"]
+    url2 = @character_url
+    @info2 = HTTParty.get url2;
+    @blurb = @info2["flavor_text_entries"][0]["flavor_text"]
+  end
+
   private
   def pokemon_params
-    params.require(:pokemon).permit(:name)
+    params.require(:pokemon).permit(:name, :attack)
   end
+
 end

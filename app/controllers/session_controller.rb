@@ -1,7 +1,5 @@
 class SessionController < ApplicationController
   def new
-    @api_list = PokeApi.get(pokemon: {limit: 1200, offset: 0})
-    @rand_pokemon1 = @api_list.results.sample
   end
 
   def create

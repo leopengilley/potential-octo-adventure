@@ -2,5 +2,10 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
+  <% @pokemon.attacks.all.each do |attack| %>
+    <%= check_box_tag "pokemon[attack_ids][]", attack.id, @pokemon.attack_ids.include?(attack.id) %>
+    <%= attack.name %><br/>
+  <% end %>
+
   <%= f.submit "Add Pokemon to Pokedex" %>
 <% end %>

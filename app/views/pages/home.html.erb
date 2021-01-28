@@ -2,11 +2,66 @@
 
 <% if @current_user.present? %>
   <h2>
-    Welcome to the Pokémon Database, <%= @current_user.name %>.
+    Welcome to Pokémon, <%= @current_user.name %>.
   </h2>
   <br>
   <p>
-    Here you can help add Pokémon to the database,
-    and store some in an inventory for battles (coming soon).
+    Here you can add Pokémon to the database,
+    and store some in an inventory for battles (under construction).
   </p>
 <% end %>
+
+
+<div class="container">
+
+  <div class="cpuPokemon">
+      <img class="fixRandomGifPosition" src="https://files.pokefans.net/sprites/xy/animationen/<%= @rand_pokemon1.name %>.gif" alt="refresh">
+  </div>
+
+  <div class="userPokemon">
+    <img id="p1" src="https://files.pokefans.net/sprites/xy/animationen/back/pikachu.gif" />
+  </div>
+
+  <div class="battle">
+    <table>
+      <tbody>
+        <tr>
+          <td class="fight">Fight</td>
+          <td>Bag</td>
+        </tr>
+        <tr>
+          <td>Pokemon</td>
+          <td>Run</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<script>
+$( document ).ready(function() {
+
+  let cpu1 = {
+    name: "<%= @rand_pokemon1.name %>",
+    health: 50,
+    attack: 20
+  };
+
+  let p1 = {
+    name: "pikachu",
+    health: 50,
+    attack: 25
+  };
+
+
+  $('.fight').on('click', function (event){
+    cpu1['health'] -= p1['attack'];
+    if (cpu1['health'] <= 0) {
+      console.log( cpu1['name'] + " fainted.");
+    };
+    });
+
+});
+</script>
