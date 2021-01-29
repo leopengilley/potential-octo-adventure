@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path unless @current_user.present? && @current_user.admin
   end
 
+  ######################gets the list of all the pokemon and their names
   def get_pokemon
     @api_list = PokeApi.get(pokemon: {limit: 1200, offset: 0})
     @available_pokemon = []

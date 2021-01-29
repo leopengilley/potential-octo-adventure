@@ -2,6 +2,7 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
+<!-- Magic again by Guillaume, I just adjusted it to movesets. -->
   <% @pokemon.attacks.all.each do |attack| %>
     <%= check_box_tag "pokemon[attack_ids][]", attack.id, @pokemon.attack_ids.include?(attack.id) %>
     <%= attack.name %><br/>

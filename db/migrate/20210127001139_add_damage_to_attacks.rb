@@ -3,3 +3,5 @@ class AddDamageToAttacks < ActiveRecord::Migration[5.2]
     add_column :attacks, :damage, :integer
   end
 end
+
+######################Ignore this migration#########################

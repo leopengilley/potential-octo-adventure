@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
+  #I didn't try to delete these, even though I have the resources above.
   get '/bags/show/:id' => 'bags#show'
   get '/bags/index' => 'bags#index'
   get '/bags/:id/edit' => 'bags#edit'

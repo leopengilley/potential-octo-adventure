@@ -3,6 +3,7 @@
   <%= f.text_field :title, :placeholder => 'Water type pokemon bag' %>
   <br>
   <br>
+  <!-- Magic by Guillaume -->
   <% Pokemon.all.each do |pokemon| %>
     <%= check_box_tag "bag[pokemon_ids][]", pokemon.id, @bag.pokemon_ids.include?(pokemon.id) %>
     <%= pokemon.name %><br/>

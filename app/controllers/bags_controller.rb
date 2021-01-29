@@ -12,7 +12,7 @@ class BagsController < ApplicationController
 
   def create
     bag = Bag.create bag_params
-    @current_user.bags << bag
+    @current_user.bags << bag ########user now has a bag associated with their acocunt
     redirect_to root_path
   end
 

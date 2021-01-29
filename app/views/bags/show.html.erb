@@ -1,5 +1,6 @@
 <h1><%= @bag.title %></h1>
 
+<!-- User's bag menu where you can add more pokemon for the battle and change their attacks -->
 <% @bag.pokemons.each do |pokemon| %>
   <%= link_to image_tag("https://files.pokefans.net/sprites/xy/animationen/#{ pokemon.name }.gif"), pokemon %>
   <%= link_to 'Assign attacks', edit_pokemon_path(pokemon) %>

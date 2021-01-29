@@ -9,7 +9,7 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new
   end
 
-  def create
+  def create ##You can only create a pokemon that exists in the PokeApi
     @pokemon = Pokemon.new pokemon_params
     if @available_pokemon.include? @pokemon[:name]
       @pokemon.save
@@ -18,7 +18,7 @@ class PokemonsController < ApplicationController
     end
   end
 
-  def edit
+  def edit #####################Blocker: Assigning attacks to pokemon only in the user's bag.
     @pokemon = Pokemon.find params[:id]
     @attacks = @pokemon.attacks.all
   end
@@ -33,6 +33,7 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
     url = "https://pokeapi.co/api/v2/pokemon/#{ @pokemon.name }/"
     @info = HTTParty.get url;
+    #Blurb about the pokemon, because it was too hard to access the 100 different attacks each pokemon has
     @character_url = @info["species"]["url"]
     url2 = @character_url
     @info2 = HTTParty.get url2;
