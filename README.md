@@ -1,5 +1,7 @@
 # Pokemon
 
+https://stark-reaches-80757.herokuapp.com/
+
 This project aimed to create a simple Pokémon battle game where users can choose a few Pokémon and battle random CPU Pokémon. The project is aims to use a CRUD system.
 
 ## Motivation
