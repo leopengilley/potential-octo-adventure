@@ -17,8 +17,8 @@
         <% if @current_user.admin? %>
           <%= link_to 'Users', users_path %>
         <% end %>
-        <%= link_to "Inventories", bags_path %>
         <%= link_to "Pokédex", pokemons_path %>
+        <%= link_to "Inventories", bags_path %>
         <%= link_to "Log out #{ @current_user.name }", login_path, :method => 'delete' %>
       <% else %>
         <%= link_to 'Sign up', new_user_path %>
